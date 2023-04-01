@@ -1,16 +1,14 @@
 import { useEffect,useState } from 'react';
-import {BrowserRouter as Router, Routes , Route } from 'react-router-dom';
 import axios from 'axios';
 import './App.css';
 import SearchIcon from './search.svg';
 import MovieCard from './MovieCard';
-import MovieDetails from './MovieDetails';
 import { Pagination } from 'antd';
 
 const API_URL ='http://www.omdbapi.com?apikey=f198b899';
 
 
-const App = () =>{
+const Main = () =>{
     const [ movies , setMovies ] = useState([]);
     const [ searchTerm, setSearchTerm ] = useState('');
 
@@ -38,8 +36,6 @@ const App = () =>{
 
         <div className='app'>
             <h1>BoraLand</h1>
-            <Router>      
-
             <div className='search'>
                 <input
                     placeholder="Search For Movies"
@@ -61,12 +57,9 @@ const App = () =>{
                         {movies.map((movie) => (
                             <>
                             <MovieCard movie={movie} />
-                            <Routes>
-                                <Route path="/Details" element={<MovieDetails movie={movie}/>}/>
-                            </Routes>
                             </>
                         ))}
-                        <Pagination defaultCurrent={1} total={10} pageSize={5} />;
+                        {/* <Pagination defaultCurrent={1} total={5} />; */}
                     </div>
                     ) : (
                     <div className='empty'>
@@ -74,9 +67,8 @@ const App = () =>{
                     </div>
                     )
             }
-            </Router>
         </div>
     )
 }
 
-export default App;
+export default Main;

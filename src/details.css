@@ -1,0 +1,28 @@
+*{
+    background-color: black;
+    font-family: Ink Free;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+.imgm{
+    position: absolute;
+    top: 20%;
+    left: 18%;
+}
+.name{
+    position: absolute;
+    left: 50%;
+    font-family: Franklin Gothic Medium;
+    color:darkcyan;
+}
+.info{
+    position: absolute;
+    left: 52%;
+    top: 30%;
+    font-size: 32px;
+    color: whitesmoke;
+}
+.head{
+    color: brown;
+}
